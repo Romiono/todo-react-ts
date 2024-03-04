@@ -4,15 +4,15 @@ import App from './App.tsx'
 import './index.css'
 import {Provider} from "react-redux";
 import {setupStore} from "./store/store.ts";
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Main from "./components/Aplication/Main.tsx";
 
 const store = setupStore();
 
 const router = createBrowserRouter([
     {
-    path: '/',
-    element: <App />,
+        path: '/',
+        element: <App/>,
     },
     {
         path: '/main',
