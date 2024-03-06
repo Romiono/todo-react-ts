@@ -8,10 +8,10 @@ const NavBar: React.FC = () => {
             <nav className={`${classes.nav} w-2/12`}>
                 <ul className={classes.navList}>
                     <li>
-                        <Link to={'/'}>Основной</Link>
+                        <Link to={'/main'}>Основной</Link>
                     </li>
                     <li>
-                        <Link to={'/main'}>Избранные</Link>
+                        <Link to={'/favorite'}>Избранные</Link>
                     </li>
                     <li>
                         <Link to={'/calender'}>Календарь</Link>
