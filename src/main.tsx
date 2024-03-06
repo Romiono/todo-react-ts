@@ -12,11 +12,11 @@ const store = setupStore();
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App/>,
+        element: <Main/>,
     },
     {
         path: '/main',
-        element: <Main/>
+        element: <App/>
     },
 
 ]);
