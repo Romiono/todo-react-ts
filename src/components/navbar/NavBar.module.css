@@ -5,11 +5,11 @@
     text-align: center ;
     margin: 0;
 
-    >li {
+    li {
         margin: 0 auto;
         transition: .5s;
         position: relative;
-        >a {
+        a {
             color: #9fb3ae;
             transition: .5s;
             font-weight: bold;
@@ -28,7 +28,7 @@ a:hover {
 
 li:hover {
     background-color: #395d54;
-    >a {
+    a {
         color: #dbe5e2;
     }
 }
@@ -37,7 +37,6 @@ li:hover {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    width: 300px;
     background: #487469 url("../../ref/ttten.svg") repeat-y;
 }
 

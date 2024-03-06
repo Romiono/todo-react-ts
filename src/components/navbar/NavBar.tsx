@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import classes from "./NavBar.module.css"
 
 const NavBar: React.FC = () => {
     return (
-        <div>
-            <nav className={classes.nav}>
+        <div className={'columns-2 flex w-full'}>
+            <nav className={`${classes.nav} w-2/12`}>
                 <ul className={classes.navList}>
                     <li>
                         <Link to={'/'}>Основной</Link>
@@ -21,6 +21,9 @@ const NavBar: React.FC = () => {
                     </li>
                 </ul>
             </nav>
+            <div className={'flex justify-center items-center w-full'} id={'detail'}>
+                <Outlet />
+            </div>
         </div>
     );
 };
