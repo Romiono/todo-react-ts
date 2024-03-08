@@ -14,7 +14,7 @@ const initialState: TodoState = {
 }
 
 export const todoSlice = createSlice({
-    name: 'user',
+    name: 'todo',
     initialState,
     reducers: {
         creat(state,action: PayloadAction<ITodo>) {
