@@ -1,10 +1,10 @@
 import './App.css'
-import Main from "./components/Aplication/Main.tsx";
+import Main from "./components/Routs/Main.tsx";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import NavBar from "./components/navbar/NavBar.tsx";
-import Favorite from "./components/Aplication/Favorite.tsx";
-import Settings from "./components/Aplication/Settings.tsx";
-import Calender from "./components/Aplication/Calender.tsx";
+import Favorite from "./components/Routs/Favorite.tsx";
+import Settings from "./components/Routs/Settings.tsx";
+import Calender from "./components/Routs/Calender.tsx";
 // import React from "react";
 
 function App() {
