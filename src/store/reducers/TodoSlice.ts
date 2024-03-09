@@ -7,6 +7,11 @@ interface TodoState {
     error: string,
 }
 
+interface creatTodo {
+    title: string,
+    description: string
+}
+
 const initialState: TodoState = {
     todos: [],
     isLoading: false,
@@ -17,8 +22,10 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        creat(state,action: PayloadAction<ITodo>) {
-            state.todos.push(action.payload);
+        creat(state,action: PayloadAction<creatTodo>) {
+            state.todos.push(
+                {id: state.todos.length ? state.todos[state.todos.length - 1].id + 1  : 1, checked: false, description: action.payload.description, title: action.payload.title}
+            );
         },
     }
 });

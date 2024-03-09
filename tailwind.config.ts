@@ -7,6 +7,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    color: {},
     extend: {},
   },
   plugins: [],
