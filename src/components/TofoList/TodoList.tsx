@@ -5,7 +5,7 @@ import {ITodo} from "../../Imodels/ITodo.ts";
 
 
 const TodoList = () => {
-    const {data: todos} = todoAPI.useFetchAllTodosQuery(null);
+    const {data: todos, isLoading, error} = todoAPI.useFetchAllTodosQuery(null);
     const [creatTodo, {}] = todoAPI.useCreateTodoMutation();
     const [todo, setTodo] = useState({
         title: '',
