@@ -3,9 +3,11 @@ import { useState} from "react";
 import {todoAPI} from "../../services/TodoAPI.ts";
 import {ITodo} from "../../Imodels/ITodo.ts";
 
-
-const TodoList = () => {
-    const {data: todos, isLoading, error} = todoAPI.useFetchAllTodosQuery(null);
+interface todoArr {
+    todos: ITodo[];
+}
+const TodoList = ({todos} : todoArr) => {
+    // const {data: todos, isLoading, error} = todoAPI.useFetchAllTodosQuery(null);
     const [creatTodo, {}] = todoAPI.useCreateTodoMutation();
     const [todo, setTodo] = useState({
         title: '',

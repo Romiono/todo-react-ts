@@ -4,43 +4,55 @@
       "id": "1",
       "title": "a title",
       "description": "asdfa",
-      "checked": ""
+      "checked": "",
+      "favorite": "true"
     },
     {
       "id": "2",
       "title": "a title",
       "description": "asdfa",
-      "checked": ""
+      "checked": "",
+      "favorite": ""
+
     },
     {
       "id": "3",
       "title": "a title",
       "description": "asdfa",
-      "checked": ""
+      "checked": "",
+      "favorite": ""
     },
     {
       "id": "4",
       "title": "a title",
       "description": "asdfa",
-      "checked": ""
+      "checked": "",
+      "favorite": "true"
+
     },
     {
       "id": "4293",
       "description": "asdf",
       "title": "adf",
-      "checked": false
+      "checked": false,
+      "favorite": ""
+
     },
     {
       "id": "458e",
       "description": "asdfadsf",
       "title": "adfasdf",
-      "checked": false
+      "checked": false,
+      "favorite": ""
+
     },
     {
       "id": "5cda",
       "description": "asdfadsfadf",
       "title": "adfasdfadf",
-      "checked": false
+      "checked": false,
+      "favorite": ""
+
     }
   ]
 }

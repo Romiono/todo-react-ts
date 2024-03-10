@@ -1,16 +1,13 @@
 import React from 'react';
-// import {useAppDispatch, useAppSelector} from "../../hooks/redux.ts";
-// import {userSlice} from "../../store/reducers/UserSlice.ts";
 import TodoList from "../TofoList/TodoList.tsx";
+import {todoAPI} from "../../services/TodoAPI.ts";
 
 const Main: React.FC = () => {
-    // const {count} = useAppSelector(state => state.userReducer);
-    // const {increment} = userSlice.actions;
-    // const dispatch = useAppDispatch();
+    const {data: todos} = todoAPI.useFetchAllTodosQuery(null)
     return (
         <div className={''}>
             <div className={'flex justify-center'}>
-                <TodoList/>
+                {todos && <TodoList todos={todos}/>}
             </div>
         </div>
     );
