@@ -26,7 +26,7 @@ const TodoList = ({todos} : todoArr) => {
     return (
         <div>
             {todos && todos.map(todo => <Todo key={todo.id} id={todo.id} title={todo.title} description={todo.description}
-                                     checked={todo.checked}/>)}
+                                     checked={todo.checked} favorite={todo.favorite}/>)}
             <form className={'flex-col flex'}>
                 <label>title</label>
                 <input onChange={(e) => setTodo({

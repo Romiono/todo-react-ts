@@ -28,6 +28,14 @@ export const todoAPI = createApi({
                 body: todo
             }),
             invalidatesTags: ['Todos']
+        }),
+        handleFavorite: build.mutation<ITodo, ITodo>({
+            query: (todo) =>  ({
+                url: `/todos/${todo.id}`,
+                method: 'PUT',
+                body: todo
+            }),
+            invalidatesTags: ['Todos']
         })
     })
 })
