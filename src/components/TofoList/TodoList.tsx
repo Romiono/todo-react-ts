@@ -21,6 +21,8 @@ const TodoList = ({todos} : todoArr) => {
         await creatTodo(todo as ITodo);
     }
 
+
+
     return (
         <div>
             {todos && todos.map(todo => <Todo key={todo.id} id={todo.id} title={todo.title} description={todo.description}

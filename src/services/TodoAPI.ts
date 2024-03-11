@@ -5,17 +5,26 @@ import {ITodo} from "../Imodels/ITodo.ts";
 export const todoAPI = createApi({
     reducerPath: 'todoAPI',
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000'}),
+    tagTypes: ['Todos'],
     endpoints:(build) => ({
-        fetchAllTodos: build.query<ITodo[], null>({
+        fetchAllTodos: build.query<ITodo[], void>({
             query: () => ({
                 url: '/todos'
             }),
-            providesTags: result => ['Todos']
+            providesTags: () => ['Todos']
         }),
         createTodo: build.mutation<ITodo, ITodo>({
             query: (todo) => ({
                 url: '/todos',
                 method: 'POST',
+                body: todo
+            }),
+            invalidatesTags: ['Todos']
+        }),
+        completeTodo: build.mutation<ITodo, ITodo>({
+            query: (todo) => ({
+                url: `/todos/${todo.id}`,
+                method: 'PUT',
                 body: todo
             }),
             invalidatesTags: ['Todos']

@@ -3,9 +3,8 @@
     {
       "id": "1",
       "title": "a title",
-      "description": "asdfa",
-      "checked": "",
-      "favorite": "true"
+      "checked": "true",
+      "description": "asdfa"
     },
     {
       "id": "2",
@@ -13,7 +12,6 @@
       "description": "asdfa",
       "checked": "",
       "favorite": ""
-
     },
     {
       "id": "3",
@@ -28,7 +26,6 @@
       "description": "asdfa",
       "checked": "",
       "favorite": "true"
-
     },
     {
       "id": "4293",
@@ -36,7 +33,6 @@
       "title": "adf",
       "checked": false,
       "favorite": ""
-
     },
     {
       "id": "458e",
@@ -44,7 +40,6 @@
       "title": "adfasdf",
       "checked": false,
       "favorite": ""
-
     },
     {
       "id": "5cda",
@@ -52,7 +47,6 @@
       "title": "adfasdfadf",
       "checked": false,
       "favorite": ""
-
     }
   ]
 }

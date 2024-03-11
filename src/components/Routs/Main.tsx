@@ -3,7 +3,7 @@ import TodoList from "../TofoList/TodoList.tsx";
 import {todoAPI} from "../../services/TodoAPI.ts";
 
 const Main: React.FC = () => {
-    const {data: todos} = todoAPI.useFetchAllTodosQuery(null)
+    const {data: todos} = todoAPI.useFetchAllTodosQuery();
     return (
         <div className={''}>
             <div className={'flex justify-center'}>

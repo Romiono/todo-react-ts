@@ -2,6 +2,6 @@ export interface ITodo {
     id: number,
     title: string,
     description: string,
-    checked: boolean,
+    checked: number,
     favorite?: boolean
 }
