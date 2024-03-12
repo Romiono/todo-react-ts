@@ -5,22 +5,31 @@ import {todoAPI} from "../../services/TodoAPI.ts";
 const Todo = ({id, title, checked, description, favorite}: ITodo) => {
     const [complete, {error: errorComplite}] = todoAPI.useCompleteTodoMutation();
     const [isFavorite,{error: errorFavorite}] = todoAPI.useHandleFavoriteMutation();
-
+    const [isDelete, {error: errorDelete}] = todoAPI.useDeleteTodoMutation();
     const completeTodo = async () => {
         try {
             await complete({id, title, checked: !checked, description, favorite});
         }
         catch {
-            console.log(errorComplite)
+            console.log(errorComplite);
         }
     }
 
     const handleFavorite = async () => {
         try {
-            await isFavorite({id, title, checked, description, favorite: !favorite})
+            await isFavorite({id, title, checked, description, favorite: !favorite});
         }
         catch  {
-            console.log(errorFavorite)
+            console.log(errorFavorite);
+        }
+    }
+
+    const deleteTodo = async () => {
+        try {
+            await isDelete(id);
+        }
+        catch {
+            console.log(errorDelete);
         }
     }
 
@@ -32,6 +41,7 @@ const Todo = ({id, title, checked, description, favorite}: ITodo) => {
             </div>
             <button onClick={handleFavorite}>{favorite ? 'remove from favorite' : 'add in favorite'}</button>
             <input type={"checkbox"} checked={checked} onChange={completeTodo}/>
+            <button onClick={deleteTodo}>delete</button>
         </div>
     );
 };
