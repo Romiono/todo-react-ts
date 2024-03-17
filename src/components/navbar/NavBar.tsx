@@ -21,7 +21,7 @@ const NavBar: React.FC = () => {
                     </li>
                 </ul>
             </nav>
-            <div className={'flex justify-center items-center w-full'} id={'detail'}>
+            <div className={'w-full'} id={'detail'}>
                 <Outlet />
             </div>
         </div>

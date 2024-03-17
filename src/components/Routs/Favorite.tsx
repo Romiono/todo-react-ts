@@ -1,6 +1,7 @@
 import {todoAPI} from "../../services/TodoAPI.ts";
 import TodoList from "../TofoList/TodoList.tsx";
 import {memo, useMemo} from "react";
+import Modal from "../../utils/modal/Modal.tsx";
 
 const Favorite = memo( () => {
     const {data: todos} = todoAPI.useFetchAllTodosQuery(null);
@@ -11,8 +12,9 @@ const Favorite = memo( () => {
 
 
     return (
-        <div>
+        <div className={'p-5'}>
             {favouriteTodos && <TodoList todos={favouriteTodos}/>}
+            <Modal/>
         </div>
     );
 });
