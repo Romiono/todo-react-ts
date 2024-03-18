@@ -7,7 +7,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    color: {},
+    color: {
+      'dark': "#242424"
+    },
     extend: {},
   },
   plugins: [],

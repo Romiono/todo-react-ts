@@ -2,10 +2,12 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import userReducer from './reducers/UserSlice';
 import modalReducer from './reducers/ModalSlice';
 import {todoAPI} from "../services/TodoAPI.ts";
+import curentTodoReducer from './reducers/CurentTodoSlice.ts'
 
 const rootReducer = combineReducers({
     userReducer,
     modalReducer,
+    curentTodoReducer,
     [todoAPI.reducerPath]: todoAPI.reducer,
 });
 

@@ -5,9 +5,9 @@ import NavBar from "./components/navbar/NavBar.tsx";
 import Favorite from "./components/Routs/Favorite.tsx";
 import Settings from "./components/Routs/Settings.tsx";
 import Calender from "./components/Routs/Calender.tsx";
-// import React from "react";
-
+import TodoPage from "./components/Todo/TodoPage.tsx";
 function App() {
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -15,7 +15,11 @@ function App() {
             children: [
                 {
                     path: '/main',
-                    element: <Main/>
+                    element: <Main/>,
+                    children: [{
+                        path: '/main',
+                        element: <TodoPage/>
+                    }]
                 },
                 {
                     path: '/favorite',

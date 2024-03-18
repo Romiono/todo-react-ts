@@ -14,6 +14,12 @@ export const todoAPI = createApi({
             }),
             providesTags: () => ['Todos']
         }),
+        fetchTodoId: build.query<ITodo, number>({
+            query :(id) =>  ({
+                url: `todos/${id}`
+            }),
+            providesTags: () => ['Todos']
+        }),
         createTodo: build.mutation<ITodo, ITodo>({
             query: (todo) => ({
                 url: '/todos',

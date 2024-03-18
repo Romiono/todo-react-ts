@@ -2,7 +2,6 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface IModel {
     isOpen: boolean,
-    // setIsOpen: (open: boolean) => void
 }
 
 const initialState :IModel = {

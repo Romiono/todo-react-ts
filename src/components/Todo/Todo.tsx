@@ -1,8 +1,11 @@
 import {ITodo} from "../../Imodels/ITodo.ts";
 import {todoAPI} from "../../services/TodoAPI.ts";
+import {useAppDispatch} from "../../hooks/redux.ts";
+import {curentTodoSlice} from "../../store/reducers/CurentTodoSlice.ts";
 
 
 const Todo = ({id, title, checked, description, favorite}: ITodo) => {
+    const dispatch = useAppDispatch();
     const [complete, {error: errorComplite}] = todoAPI.useCompleteTodoMutation();
     const [isFavorite, {error: errorFavorite}] = todoAPI.useHandleFavoriteMutation();
     const [isDelete, {error: errorDelete}] = todoAPI.useDeleteTodoMutation();
@@ -31,8 +34,13 @@ const Todo = ({id, title, checked, description, favorite}: ITodo) => {
         }
     }
 
+    const chooseTodo = (e: { stopPropagation: () => void; }) => {
+        e.stopPropagation();
+        dispatch(curentTodoSlice.actions.choose(id))
+    }
+
     return (
-        <div className={'w-full m-2 flex justify-between bg-neutral-800 p-5 rounded-2xl outline-gray-50 transition-all'}>
+        <div onClick={chooseTodo} className={'w-full m-2 flex justify-between bg-neutral-800 p-5 rounded-2xl outline-gray-50 transition-all'}>
             <div className={'flex flex-col justify-center items-start'}>
                 <h6 className={'font-bold text-2xl'}>{title}</h6>
                 {description && <p className={'text-xl'}>{description}</p>}

@@ -39,43 +39,10 @@
       "checked": false
     },
     {
-      "id": "c0гab",
-      "description": "капец помидоры подорожали",
-      "title": "купить помидоры",
-      "checked": false
-    },
-    {
-      "id": "c0aшb",
-      "title": "купить помидоры",
+      "id": "da10",
+      "title": "кайф, работает",
       "checked": false,
-      "description": "капец помидоры подорожали",
-      "favorite": false
-    },
-    {
-      "id": "c0dшb",
-      "title": "купить помидоры",
-      "checked": false,
-      "description": "капец помидоры подорожали",
-      "favorite": false
-    },
-    {
-      "id": "cdfшb",
-      "title": "купить помидоры",
-      "checked": false,
-      "description": "капец помидоры подорожали",
-      "favorite": false
-    },
-    {
-      "id": "ae1c",
-      "description": "лютое дело на самом деле, важное очень ",
-      "title": "новое дело ",
-      "checked": false
-    },
-    {
-      "id": "e17c",
-      "description": "",
-      "title": "или нет",
-      "checked": false
+      "description": ""
     }
   ]
 }
