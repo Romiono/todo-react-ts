@@ -1,48 +1,24 @@
 {
   "todos": [
     {
-      "id": "c0йab",
-      "title": "купить помидоры",
-      "checked": false,
-      "description": "капец помидоры подорожали",
-      "favorite": false
-    },
-    {
-      "id": "c0цab",
-      "title": "купить помидоры",
-      "checked": false,
-      "description": "капец помидоры подорожали",
-      "favorite": true
-    },
-    {
-      "id": "c0уab",
-      "description": "капец помидоры подорожали",
-      "title": "купить помидоры",
-      "checked": false
-    },
-    {
-      "id": "c0кab",
-      "description": "капец помидоры подорожали",
-      "title": "купить помидоры",
-      "checked": false
-    },
-    {
-      "id": "c0aеb",
-      "description": "капец помидоры подорожали",
-      "title": "купить помидоры",
-      "checked": false
-    },
-    {
-      "id": "c0нab",
-      "description": "капец помидоры подорожали",
-      "title": "купить помидоры",
-      "checked": false
-    },
-    {
       "id": "da10",
       "title": "кайф, работает",
       "checked": false,
-      "description": ""
+      "description": "",
+      "favorite": false
+    },
+    {
+      "id": "0b45",
+      "description": "какого хрена",
+      "title": "Работает ",
+      "checked": false
+    },
+    {
+      "id": "a3fe",
+      "title": "продам",
+      "checked": true,
+      "description": "гараж",
+      "favorite": true
     }
   ]
 }
