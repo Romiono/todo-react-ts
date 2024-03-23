@@ -1,24 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "da10",
-      "title": "кайф, работает",
-      "checked": false,
-      "description": "",
-      "favorite": false
-    },
-    {
-      "id": "0b45",
-      "description": "какого хрена",
-      "title": "Работает ",
-      "checked": false
-    },
-    {
-      "id": "a3fe",
-      "title": "продам",
-      "checked": true,
-      "description": "гараж",
-      "favorite": true
-    }
-  ]
+  "todos": []
 }

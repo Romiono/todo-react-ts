@@ -44,6 +44,15 @@ export const todoAPI = createApi({
             }),
             invalidatesTags: ['Todos']
         }),
+        addTitle: build.mutation<ITodo, ITodo>({
+            query: ({id, ...patch}) => ({
+                url: `/todos/${id}`,
+                method: 'PATCH',
+                body: patch
+            }),
+            invalidatesTags: ['Todos']
+
+        }),
         deleteTodo: build.mutation<number, number>({
             query: (id: number) => ({
                 url: `/todos/${id}`,
