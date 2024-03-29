@@ -5,17 +5,13 @@ import {ITodo} from "../../Imodels/ITodo.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux.ts";
 import {modalSlice} from "../../store/reducers/ModalSlice.ts";
 
-// interface IModel {
-//     isOpen: boolean,
-//     setIsOpen: (open: boolean) => void
-// }
-
 export default function Modal() {
     const [creatTodo, {}] = todoAPI.useCreateTodoMutation();
     const [todo, setTodo] = useState({
         title: '',
         description: '',
         checked: false,
+        favorite: false
     });
 
     const {isOpen} = useAppSelector(state => state.modalReducer);
@@ -24,13 +20,20 @@ export default function Modal() {
     const creatTodos = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         await creatTodo(todo as ITodo);
-        closeModal()
+        closeModal();
+        setTodo({
+            title: '',
+            description: '',
+            checked: false,
+            favorite: false
+        })
 
     }
 
     function closeModal() {
         dispatch(modalSlice.actions.handlerModal(false))
     }
+
 
     return (
         <div>
@@ -73,17 +76,13 @@ export default function Modal() {
                                             <label>
                                                 <input className={'w-full bg-green-100 text-green-900 rounded-md'}
                                                     onChange={(e) => setTodo({
-                                                    description: todo.description,
-                                                    title: e.target.value,
-                                                    checked: false
+                                                        ...todo, title: e.target.value
                                                 })}/>
                                             </label>
                                             <label>
                                                 <input className={'w-full bg-green-100 text-green-900 rounded-md'}
                                                     onChange={(e) => setTodo({
-                                                    description: e.target.value,
-                                                    title: todo.title,
-                                                    checked: false
+                                                        ...todo, description: e.target.value
                                                 })}/>
                                             </label>
                                             <button

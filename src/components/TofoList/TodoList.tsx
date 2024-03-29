@@ -17,8 +17,7 @@ const TodoList = ({todos} : todoArr) => {
 
     return (
         <div>
-            {todos && todos.map(todo => <Todo key={todo.id} id={todo.id} title={todo.title} description={todo.description}
-                                     checked={todo.checked} favorite={todo.favorite}/>)}
+            {todos && todos.map(todo => <Todo todo={todo} key={todo.id}/>)}
             <button onClick={newTodo} className={'rounded-full w-16 h-16 text-xl fixed bottom-10 right-10'}>+</button>
         </div>
     );
