@@ -1,3 +1,9 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "id": 0,
+      "title": "sgs",
+      "checked": false
+    }
+  ]
 }

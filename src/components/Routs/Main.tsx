@@ -24,7 +24,7 @@ const Main = () => {
 // }, [page, isFetching]);
 
     return (
-        <div className={'columns-2 flex h-full'}>
+        <div className={'columns-2 flex h-full w-full'}>
             <div className={' h-full w-1/2 border-r-2 border-r-neutral-700 p-5'}>
                 {todosAPI && <TodoList todos={todosAPI}/>}
             </div>
