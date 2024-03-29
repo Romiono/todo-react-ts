@@ -1,14 +1,9 @@
 import {Dialog, Transition} from '@headlessui/react';
-import {Fragment, useState} from 'react';
+import {ChangeEvent, FormEvent, Fragment, useState} from 'react';
 import {todoAPI} from "../../services/TodoAPI.ts";
 import {ITodo} from "../../Imodels/ITodo.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux.ts";
 import {modalSlice} from "../../store/reducers/ModalSlice.ts";
-
-// interface IModel {
-//     isOpen: boolean,
-//     setIsOpen: (open: boolean) => void
-// }
 
 export default function Modal() {
     const [creatTodo, {}] = todoAPI.useCreateTodoMutation();
@@ -16,21 +11,35 @@ export default function Modal() {
         title: '',
         description: '',
         checked: false,
+        favorite: false
     });
 
     const {isOpen} = useAppSelector(state => state.modalReducer);
     const dispatch = useAppDispatch();
 
-    const creatTodos = async (e: { preventDefault: () => void; }) => {
+    const creatTodos = async (e: FormEvent) => {
         e.preventDefault();
         await creatTodo(todo as ITodo);
-        closeModal()
+        closeModal();
+        setTodo({
+            title: '',
+            description: '',
+            checked: false,
+            favorite: false
+        })
 
     }
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = event.target;
+        setTodo((prevFormData) => ({...prevFormData, [name]: value}));
+    };
+
 
     function closeModal() {
         dispatch(modalSlice.actions.handlerModal(false))
     }
+
 
     return (
         <div>
@@ -72,19 +81,22 @@ export default function Modal() {
                                         <form className={'flex-col flex gap-3'}>
                                             <label>
                                                 <input className={'w-full bg-green-100 text-green-900 rounded-md'}
-                                                    onChange={(e) => setTodo({
-                                                    description: todo.description,
-                                                    title: e.target.value,
-                                                    checked: false
-                                                })}/>
+                                                       name={'title'}
+                                                       // onChange={(e) => setTodo({
+                                                       //     ...todo, title: e.target.value
+                                                       // })}
+                                                    onChange={handleChange}
+                                                />
                                             </label>
                                             <label>
                                                 <input className={'w-full bg-green-100 text-green-900 rounded-md'}
-                                                    onChange={(e) => setTodo({
-                                                    description: e.target.value,
-                                                    title: todo.title,
-                                                    checked: false
-                                                })}/>
+                                                       name={'description'}
+                                                       // onChange={(e) => setTodo({
+                                                       //     ...todo, description: e.target.value
+                                                       // })}
+                                                       onChange={handleChange}
+
+                                                />
                                             </label>
                                             <button
                                                 type="button"
