@@ -1,5 +1,5 @@
 import {Dialog, Transition} from '@headlessui/react';
-import {Fragment, useState} from 'react';
+import {FormEvent, Fragment, useState} from 'react';
 import {todoAPI} from "../../services/TodoAPI.ts";
 import {ITodo} from "../../Imodels/ITodo.ts";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux.ts";
@@ -17,7 +17,7 @@ export default function Modal() {
     const {isOpen} = useAppSelector(state => state.modalReducer);
     const dispatch = useAppDispatch();
 
-    const creatTodos = async (e: { preventDefault: () => void; }) => {
+    const creatTodos = async (e: FormEvent) => {
         e.preventDefault();
         await creatTodo(todo as ITodo);
         closeModal();
